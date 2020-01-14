@@ -1,9 +1,21 @@
 const express = require("express");
+const mongoose = require("mongoose");
+//Baixar o Insomnia : insomnia.rest
 
 const app = express();
 
+
+
+mongoose.connect("text",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+app.use(express.json());
+
 app.get("/", (req, res)=>{
-    return res.send("Hello World");
+    console.log(req.body);
+    return res.json({message : "Hello"});
 });
 
 const PORT = 3001;

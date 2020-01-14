@@ -1,10 +1,14 @@
 {
-  "name": "react teste",
+  "name": "react-teste",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Melo <mellowteam@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ."
+  },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.8.7"
   }
 }
