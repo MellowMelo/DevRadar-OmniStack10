@@ -1,22 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const routes = require("./routes");
 //Baixar o Insomnia : insomnia.rest
 
 const app = express();
 
-
-
-mongoose.connect("text",{
+mongoose.connect("",{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
 app.use(express.json());
-
-app.get("/", (req, res)=>{
-    console.log(req.body);
-    return res.json({message : "Hello"});
-});
+app.use(routes);
 
 const PORT = 3001;
 app.listen(PORT,()=>{
