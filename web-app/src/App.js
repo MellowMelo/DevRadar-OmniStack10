@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './global.css'
 import './App.css'
 import './Sidebar.css'
+import './Main.css'
 
 //Component: Isolated Blocks of Html, css and js, wich dont inteferes in the rest of the application
 //Props: Informations that a father Component pass to a child Component
@@ -41,7 +42,52 @@ function App() {
         </form>
       </aside>
       <main>
-
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img src="https://img.culturacolectiva.com/content/2017/02/Josh-Homme.gif?_ga=2.256374219.1318657904.1579126936-397258964.1579126936" alt="Alex Turner"></img>
+              <div className="user-info">
+                <strong>Alex Turner</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Singer, fronman of Arctic Monkeys and The last shadow puppets</p>
+            <a href="https://gihub.com/MellowMelo">Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://img.culturacolectiva.com/content/2017/02/Josh-Homme.gif?_ga=2.256374219.1318657904.1579126936-397258964.1579126936" alt="Alex Turner"></img>
+              <div className="user-info">
+                <strong>Alex Turner</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Singer, fronman of Arctic Monkeys and The last shadow puppets</p>
+            <a href="https://gihub.com/MellowMelo">Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://img.culturacolectiva.com/content/2017/02/Josh-Homme.gif?_ga=2.256374219.1318657904.1579126936-397258964.1579126936" alt="Alex Turner"></img>
+              <div className="user-info">
+                <strong>Alex Turner</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Singer, fronman of Arctic Monkeys and The last shadow puppets</p>
+            <a href="https://gihub.com/MellowMelo">Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://img.culturacolectiva.com/content/2017/02/Josh-Homme.gif?_ga=2.256374219.1318657904.1579126936-397258964.1579126936" alt="Alex Turner"></img>
+              <div className="user-info">
+                <strong>Alex Turner</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Singer, fronman of Arctic Monkeys and The last shadow puppets</p>
+            <a href="https://gihub.com/MellowMelo">Github</a>
+          </li>
+        </ul>
       </main>
     </div>
   );
