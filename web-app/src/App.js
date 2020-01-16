@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './global.css'
 import './App.css'
@@ -10,31 +10,48 @@ import './Main.css'
 //State: Informations holded by Component(Remember: imutability)
 
 function App() {
+  const [github_username, setGihubUsername] = useState('');
+  const [techs, setTechs] = useState('');
 
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+
+  useEffect(()=>{
+    navigator.geolocation.getCurrentPosition((pos)=>{
+      const { latitude, longitude} = pos.coords;
+
+      setLatitude(latitude);
+      setLongitude(longitude);
+    },(err)=>{
+      console.log(err);
+    },{
+      timeout: 30000
+    });
+  }, []);//[] is the dependencies
 
   return (//<></> its a fragment, to avoid a classical error of multi components
     <div id="app">
       <aside>
         <strong className="">Sign up</strong>
         <form>
-          <div class="input-block">
-            <label hmlFor="github_username">Github User</label>
-            <input name="github_username" id="github_username" required />
+          <div className="input-block">
+            <label htmlFor="github_username">Github User</label>
+            <input name="github_username" id="github_username" required value={github_username} onChange={e => setGihubUsername(e.target.value)} />
           </div>
 
-          <div class="input-block">
-            <label hmlFor="techs">Tecnologies</label>
-            <input name="techs" id="techs" required />
+          <div className="input-block">
+            <label htmlFor="techs">Tecnologies</label>
+            <input name="techs" id="techs" required value={techs} onChange={e => setTechs(e.target.value)} />
           </div>
 
           <div className="input-group">
-            <div class="input-block">
-              <label hmlFor="latitude">Latitude</label>
-              <input name="latitude" id="latitude" required />
+            <div className="input-block">
+              <label htmlFor="latitude">Latitude</label>
+              <input type="number" name="latitude" id="latitude" required value={latitude} onChange={e => setLatitude(e.target.value)} />
             </div>
-            <div class="input-block">
-              <label hmlFor="longitude">Longitude</label>
-              <input name="longitude" id="longitude" required />
+            <div className="input-block">
+              <label htmlFor="longitude">Longitude</label>
+              <input type="number" name="longitude" id="longitude" required value={longitude} onChange={e => setLongitude(e.target.value)} />
             </div>
           </div>      
           
