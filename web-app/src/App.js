@@ -12,7 +12,6 @@ import './Main.css'
 function App() {
   const [github_username, setGihubUsername] = useState('');
   const [techs, setTechs] = useState('');
-
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
 
@@ -29,6 +28,9 @@ function App() {
     });
   }, []);//[] is the dependencies
 
+  async function handleAddDev(e) {
+    e.preventDefault();
+  }
   return (//<></> its a fragment, to avoid a classical error of multi components
     <div id="app">
       <aside>
