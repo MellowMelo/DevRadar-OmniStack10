@@ -30,12 +30,14 @@ function App() {
 
   async function handleAddDev(e) {
     e.preventDefault();
+
+    
   }
   return (//<></> its a fragment, to avoid a classical error of multi components
     <div id="app">
       <aside>
         <strong className="">Sign up</strong>
-        <form>
+        <form onSubmit={handleAddDev}>
           <div className="input-block">
             <label htmlFor="github_username">Github User</label>
             <input name="github_username" id="github_username" required value={github_username} onChange={e => setGihubUsername(e.target.value)} />
