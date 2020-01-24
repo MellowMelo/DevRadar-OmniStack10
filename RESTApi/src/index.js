@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 
 
-mongoose.connect("",{
+mongoose.connect("mongodb+srv://root:toor@cluster0-xat4f.mongodb.net/DevRadar?retryWrites=true&w=majority",{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
