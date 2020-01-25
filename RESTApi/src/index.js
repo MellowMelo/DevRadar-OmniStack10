@@ -2,12 +2,16 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const cors = require("cors");
+const http = require('http');
+const { setupWebsocket } = require('./websocket');
 //Baixar o Insomnia : insomnia.rest
 
 const app = express();
+const server = http.Server(app);
 
+setupWebsocket(server);
 
-mongoose.connect("mongodb+srv://root:toor@cluster0-xat4f.mongodb.net/DevRadar?retryWrites=true&w=majority",{
+mongoose.connect("",{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -17,6 +21,6 @@ app.use(express.json());
 app.use(routes);
 
 const PORT = 3001;
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     console.log("Application running on "+PORT+" port");
 })
