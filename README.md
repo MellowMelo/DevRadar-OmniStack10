@@ -5,7 +5,7 @@
 - NodeJS
 - React-Naive
 - ReactJS
-#### Other Frameworks and Tecnologies
+#### Other Frameworks and Tecnologies:
 - Express
 - Socketio
 - Expo
