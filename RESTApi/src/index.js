@@ -11,7 +11,9 @@ const server = http.Server(app);
 
 setupWebsocket(server);
 
-mongoose.connect("",{
+require("dotenv-safe").config();
+
+mongoose.connect(process.env.MONGO_SECRET,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
